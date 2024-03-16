@@ -1,0 +1,12 @@
+/* 
+    Автро: Семенов Даниил
+    13.03.2024
+    Файл подключений стилей CSS
+*/
+
+@import url("./main.css");
+@import url("./mainPage.css");
+@import url("./meetingPage.css");
+@import url("./accountPage.css");
+@import url("./notFoundPage.css");
+@import url("./media.css");

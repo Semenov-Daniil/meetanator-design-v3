@@ -1,0 +1,733 @@
+/* 
+    Автро: Семенов Даниил
+    13.03.2024
+    Файл главных стилей
+    Стили названы в соотвествии с Tailwind
+*/
+
+/* Установка пользовательских правил */
+:root {
+    --font-family-main: Arial, sans-serif;
+
+    --color-text-main: #000000;
+    --color-text-sec: #ffffff;
+    --color-text-the: #9e9e9e;
+
+    --color-system-main: #ffffff;
+    --color-system-main-op: rgba(255, 255, 255, 0.3);
+    --color-system-sec: #080623;
+    --color-system-sec-op: rgba(8, 6, 35, 0.3);
+
+    --color-footer: #000000;
+
+    --color-main: #0800ff;
+    --color-shadow: #141246;
+
+    --color-succ: #00ff6a;
+    --color-dunger: #ff0051;
+
+    --color-user-cell: #00eeff;
+
+    --linear-gradient: 135deg, rgba(255,255,255,0.5), rgba(255,255,255,0.2);
+}
+
+/* Переопределение стандартных правил */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+
+    font-family: var(--font-family-main);
+    font-size: 10px;
+    color: var(--color-text-main);
+}
+
+body {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    background-color: var(--color-system-main);
+}
+
+main {
+    flex: 1;
+}
+
+section {
+    position: relative;
+}
+
+a {
+    position: relative;
+
+    display: block;
+    width: fit-content;
+    height: fit-content;
+
+    cursor: pointer;
+
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+}
+
+button {
+    position: relative;
+
+    display: block;
+    width: fit-content;
+
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+
+    background-color: transparent;
+
+    white-space: nowrap;
+}
+
+img,
+video {
+    width: 100%;
+    height: auto;
+}
+
+svg {
+    width: fit-content;
+    height: fit-content;
+}
+
+input,
+textarea {
+    border: none;
+    outline: none;
+
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+label {
+    cursor: pointer;
+}
+
+input:autofill {
+    background: none;
+}
+
+/* Flex стили */
+.d-f {
+    display: flex;
+}
+
+.fd-c {
+    flex-direction: column;
+}
+
+.fw-w {
+    flex-wrap: wrap;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.ai-e {
+    align-items: end;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.jc-sa {
+    justify-content: space-around;
+}
+
+.jc-c {
+    justify-content: center;
+}
+
+.g-1 {
+    gap: 1rem;
+}
+
+.g-2 {
+    gap: 2rem;
+}
+
+.g-3 {
+    gap: 3rem;
+}
+
+.g-4 {
+    gap: 4rem;
+}
+
+.g-5 {
+    gap: 5rem;
+}
+
+/* Padding and margin */
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.p-3 {
+    padding: 3rem;
+}
+
+.p-4 {
+    padding: 4rem;
+}
+
+.p-5 {
+    padding: 5rem;
+}
+
+.px-4 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.px-5 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.py-1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.py-3 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.py-5 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.pt-20 {
+    padding-top: 20rem;
+}
+
+.pt-25 {
+    padding-top: 25rem;
+}
+
+.pb-10 {
+    padding-bottom: 10rem;
+}
+
+.m-1 {
+    margin: 1rem;
+}
+
+.m-2 {
+    margin: 2rem;
+}
+
+.m-3 {
+    margin: 3rem;
+}
+
+.m-4 {
+    margin: 4rem;
+}
+
+.m-5 {
+    margin: 5rem;
+}
+
+/* Header стили */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    width: 100%;
+
+    font-size: 1.8rem;
+    color: var(--color-system-sec);
+}
+
+.header > div {
+    position: relative;
+}
+
+.header nav {
+    width: 100%;
+}
+
+.nav-list {
+    list-style-type: none;
+}
+
+.nav-group > span {
+    display: block;
+    width: 2px;
+    height: 3rem;
+
+    background-color: var(--color-system-sec);
+}
+
+.header .logo-wrapp,
+.header .nav-group {
+    padding: 1rem 3rem;
+
+    border: 2px solid var(--color-system-sec);
+    border-radius: 50px;
+
+    background-color: var(--color-system-main-op);
+    backdrop-filter: blur(20px);
+}
+
+.header .logo {
+    fill: var(--color-system-sec);
+}
+
+.nav-mobale {
+    display: none;
+}
+
+.nav-mobale .burger input[type="checkbox"] {
+    display: none;
+}
+
+.nav-mobale .burger input[type="checkbox"]:checked~.menu-mobile-list {
+    display: block;
+}
+
+.nav-mobale .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: var(--color-system-main-op);
+    backdrop-filter: blur(20px);
+
+    padding: 1rem 2rem;
+
+    border: 2px solid var(--color-system-sec);
+    border-radius: 10px;
+
+    height: 100%;
+}
+
+.nav-mobale .burger span {
+    display: block;
+
+    width: 4rem;
+    height: 2px;
+    align-self: flex-end;
+
+    border-radius: 50px;
+
+    background-color: var(--color-system-sec);
+}
+
+.nav-mobale .burger span:nth-child(3) {
+    width: 75%;
+}
+
+.nav-mobale .burger span:nth-child(4) {
+    width: 50%;
+}
+
+.menu-mobile-list {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    transform: translateY(100%);
+    
+    display: none;
+    height: fit-content;
+    width: fit-content;
+
+    background-color: var(--color-system-main-op);
+    backdrop-filter: blur(20px);
+
+    border: 2px solid var(--color-system-sec);
+    border-radius: 10px;
+}
+
+.menu-mobile-list li {
+    width: 100%;
+}
+
+.menu-mobile-list li > a {
+    display: block;
+
+    padding: 2rem;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+.menu-mobile-list li a:hover {
+    background-color: var(--color-system-main-op);
+}
+
+
+/* Footer стили */
+.footer {
+    width: 100%;
+
+    font-size: 1.8rem;
+    color: var(--color-text-sec);
+
+    background-color: var(--color-footer);
+}
+
+.footer > div > span {
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--color-system-main);
+}
+
+.footer .nav-list {
+    height: fit-content;
+}
+
+.footer .logo {
+    fill: var(--color-system-main);
+}
+
+/* Дополнительные стили */
+.logo-wrapp > a {
+    display: flex;
+}
+
+.link-main {
+    color: var(--color-main);
+}
+
+.container {
+    position: relative;
+    width: clamp(350px, 80%, 1300px);
+}
+
+.container-title {
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+.bc-b {
+    background-color: var(--color-system-sec);
+    color: var(--color-text-sec);
+}
+
+.br-b-l::before,
+.br-b-r::before {
+    content: '';
+
+    position: absolute;
+    top: 13.5rem;
+
+    display: block;
+    width: 0%;
+    height: 2px;
+
+    background-color: transparent;
+}
+
+.br-b-l::before {
+    left: 0;
+}
+
+.br-b-r::before {
+    right: 0;
+}
+
+.br-b-r .container .container-title {
+    text-align: end;
+}
+
+/* Стили кнопок */
+.btn {
+    padding: 1.5rem 2.5rem;
+
+    font-size: 1.8rem;
+    color: var(--color-text-sec);
+
+    border: 2px solid transparent;
+    border-radius: 10px;
+    
+    overflow: hidden;
+
+    transition: 0.5s;
+}
+
+.btn-main {
+    top: 0;
+
+    backdrop-filter: blur(20px);
+
+    border-color: var(--color-text-sec);
+    
+    color: var(--color-text-sec);
+}
+
+.btn-main::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+
+    display: block;
+    width: 100%;
+    height: 0%;
+
+    background-color: var(--color-main);
+
+    transition: inherit;
+}
+
+.btn-main:hover {
+    top: -5px;
+
+    box-shadow: 0px 10px 20px var(--color-shadow);
+}
+
+.btn-main:hover::after {
+    height: 100%;
+}
+
+.btn-slide {
+    font-size: 3rem;
+    line-height: 1.5rem;
+
+    padding: 0;
+    width: 10rem;
+    height: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-color: var(--color-text-sec);
+}
+
+.btn-next::after {
+    content: '→';
+
+    position: relative;
+    left: 0;
+    top: -2px;
+}
+
+.btn-prev::after {
+    content: '←';
+
+    position: relative;
+    left: 0;
+    top: -2px;
+}
+
+.btn-slide:hover::after {
+    animation: arror-trasform 1s ease-in-out;
+}
+
+@keyframes arror-trasform {
+    from {
+        left: 0;
+    }
+
+    25% {
+        left: -5px;
+    }
+
+    75% {
+        left: 5px;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+.btn-sec {
+    background-color: var(--color-main);
+}
+
+.btn-sec:hover {
+    background-color: var(--color-shadow);
+}
+
+.btn-the {
+    color: var(--color-text-main);
+    border-color: var(--color-text-main);
+    border-radius: 10px;
+}
+
+/* Стили form */
+form {
+    width: 100%;
+
+    font-size: 1.8rem;
+    color: var(--color-text-main);
+}
+
+.input-wrapp {
+    position: relative;
+}
+
+.input-wrapp input:not([type="checkbox"]),
+.input-wrapp textarea {
+    padding: 1rem;
+
+    width: 100%;
+
+    font-size: inherit;
+
+    border-bottom: 2px solid var(--color-text-main);
+}
+
+.input-wrapp input:not([type="checkbox"])~label,
+.input-wrapp textarea~label {
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+
+    padding: 1rem;
+
+    transition: 0.5s all;
+}
+
+.input-wrapp input:not([type="checkbox"]):hover~label,
+.input-wrapp input:not([type="checkbox"]):focus~label,
+.input-wrapp input:not([type="checkbox"]):not(:placeholder-shown)~label,
+.input-wrapp textarea:hover~label,
+.input-wrapp textarea:focus~label,
+.input-wrapp textarea:not(:placeholder-shown)~label {
+    bottom: 70%;
+
+    font-size: 1.5rem;
+
+    color: var(--color-text-the);
+}
+
+.input-wrapp input:not([type="checkbox"]):hover,
+.input-wrapp input:not([type="checkbox"]):focus,
+.input-wrapp textarea:hover,
+.input-wrapp textarea:focus {
+    border-color: var(--color-main);
+}
+
+.input-group {
+    flex: 1;
+    
+    min-width: 300px;
+
+    padding: 3rem;
+
+    background: linear-gradient(var(--linear-gradient));
+
+    border: 2px solid var(--color-text-main);
+    border-radius: 10px;
+}
+
+.checkbox-wrapp input {
+    opacity: 0;
+
+    transition: 0.5s;
+}
+
+.checkbox-wrapp label {
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
+
+    transition: 0.5s all;
+}
+
+.checkbox-wrapp input:hover,
+.checkbox-wrapp input:focus,
+.checkbox-wrapp input:checked {
+    opacity: 1;
+}
+
+.checkbox-wrapp input:hover~label,
+.checkbox-wrapp input:focus~label,
+.checkbox-wrapp input:checked~label {
+    left: 3rem;
+}
+
+.valid-wrapp input[type="date"] {
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    border: 2px solid var(--color-text-main);
+    border-radius: 10px;
+}
+
+.dates-wrapp > div:first-child {
+    padding: 1rem;
+}
+
+input[type="time"] {
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--color-text-main);
+}
+
+.valid-wrapp > p {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    display: none;
+}
+
+.is-valid > p,
+.is-invalid > p {
+    display: inline-block;
+}
+
+.is-valid input {
+    border-color: var(--color-succ) !important;
+}
+
+.is-valid > p {
+    color: var(--color-succ);
+}
+
+.is-invalid input {
+    border-color: var(--color-dunger) !important;
+}
+
+.is-invalid > p {
+    color: var(--color-dunger);
+}

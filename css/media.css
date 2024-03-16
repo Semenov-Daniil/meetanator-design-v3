@@ -1,0 +1,109 @@
+/* 
+    Автро: Семенов Даниил
+    13.03.2024
+    Файл media-запросов CSS
+    Стили названы в соотвествии с Tailwind
+*/
+
+@media only screen and (max-width: 1200px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .nav-group {
+        display: none;
+    }
+
+    .nav-mobale {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    html {
+        font-size: 7px;
+    }
+    
+    .br-b-l::before,
+    .br-b-r::before {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 6px;
+    }
+}
+
+@media print {
+    :root {
+        --font-family-main: Arial, sans-serif;
+    
+        --color-text-main: #000000;
+        --color-text-sec: #ffffff;
+        --color-text-the: #9e9e9e;
+    
+        --color-system-main: #ffffff;
+        --color-system-main-op: rgba(255, 255, 255, 0.3);
+        --color-system-sec: #000000;
+        --color-system-sec-op: rgba(0, 0, 0, 0.3);
+    
+        --color-footer: #000000;
+    
+        --color-main: #000000;
+        --color-shadow: #000000;
+    
+        --color-succ: #000000;
+        --color-dunger: #000000;
+    
+        --color-user-cell: #000000;
+    
+        --linear-gradient: 135deg, rgba(255,255,255,0.5), rgba(255,255,255,0.2);
+    }
+    
+    html {
+        font-size: 6px;
+    }
+
+    .header {
+        position: relative;
+        top: 0;
+    }
+
+    table {
+        font-size: 0.5rem;
+    }
+
+    table,
+    table thead,
+    table tbody, 
+    table tfoot {
+        display: flex;
+    }
+
+    table tr,
+    table th:not(:first-child),
+    table td:not(:first-child) {
+        flex: 1;
+    }
+
+    table tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    table tr th:first-child {
+        height: 10rem;
+    }
+
+    table tr td:first-child {
+        height: 10rem;
+    }
+
+    table .user-name {
+        min-width: fit-content;
+    }
+}

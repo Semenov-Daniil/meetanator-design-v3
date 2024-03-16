@@ -1,0 +1,240 @@
+/* 
+    Автро: Семенов Даниил
+    13.03.2024
+    Файл стилей на страницах встречи
+    Стили названы в соотвествии с Tailwind
+*/
+
+.bg-img {
+    background-image: url("./../img/hero-bg.jpg");
+}
+
+.section-meet > .container {
+    position: relative;
+    top: 0;
+
+    background-color: var(--color-system-main-op);
+    backdrop-filter: blur(20px);
+
+    border-radius: 20px;
+
+    animation: container-show 2s;
+}
+
+@keyframes container-show {
+    from {
+        top: -20rem;
+        opacity: 0;
+    }
+
+    to {
+        top: 0%;
+        opacity: 1;
+    }
+}
+
+.section-meet h2 {
+    font-size: 3rem;
+    color: var(--color-shadow);
+}
+
+.section-meet a {
+    border-bottom: 2px solid var(--color-text-main);
+}
+
+/* Section info meeting */
+.info-meet-list {
+    list-style-type: none;
+
+    font-size: 2rem;
+}
+
+/* Section invite */
+.invite-meet form .valid-wrapp {
+    flex: 1;
+}
+
+/* Section upload files */
+.input-file-wrapp {
+    height: 100%;
+}
+
+.input-file-wrapp label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3rem;
+
+    font-size: 2.5rem;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+
+    border: 2px dashed var(--color-text-main);
+    border-radius: 10px;
+
+    background-color: var(--color-system-main-op);
+    backdrop-filter: blur(20px);
+
+    height: 100%;
+}
+
+.input-file-wrapp input {
+    display: none;
+}
+
+.upload-file .btn {
+    width: 100%;
+}
+
+.upload-file > div {
+    flex: 1;
+}
+
+/* Section meet */
+.meet-wrapp {
+    overflow: scroll;
+    border-radius: 10px;
+    background-color: var(--color-system-main-op);
+    backdrop-filter: blur(20px);
+}
+
+.table-meet {
+    min-width: 600px;
+
+    border-collapse: separate;
+    border-spacing: 10px;
+    border-radius: 10px;
+
+    font-size: 2rem;
+}
+
+.table-meet tr {
+    border-radius: inherit;
+}
+
+.table-meet th,
+.table-meet td {
+    position: relative;
+
+    empty-cells: hide;
+
+    border-radius: 10px;
+
+    padding: 1.5rem 2rem;
+
+    white-space: nowrap;
+}
+
+.table-meet th {
+    font-size: 3rem;
+}
+
+.table-meet thead th,
+.table-meet thead td {
+    background-color: var(--color-system-main-op);
+    border: 1px solid var(--color-system-sec-op);
+}
+
+.user-name {
+    min-width: 250px;
+    
+    background-color: var(--color-user-cell);
+}
+
+.user-name-widget {
+    background-color: var(--color-system-sec);
+
+    font-size: 1.5rem;
+    color: var(--color-text-sec);
+
+    border-radius: 5px;
+
+    padding: 0.5rem 1rem;
+}
+
+.delete-user {
+    font-size: 2rem;
+
+    transition: 0.2s;
+}
+
+.delete-user:hover {
+    color: var(--color-dunger);
+}
+
+.user-row td:not(.user-name) input[type="checkbox"] {
+    display: none;
+}
+
+.user-row td:not(.user-name) input[type="checkbox"]~label {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    transition: 0.5s;
+}
+
+.user-row td:not(.user-name) input[type="checkbox"]:not(:checked)~label {
+    background-color: var(--color-main);
+}
+
+.user-row td:not(.user-name) input[type="checkbox"]:not(:checked):hover~label {
+    background-color: var(--color-shadow);
+}
+
+.user-row td:not(.user-name) input[type="checkbox"]:checked~label {
+    background-color: var(--color-succ);
+}
+
+.user-row td:not(.user-name) input[type="checkbox"]:checked~label::after {
+    content: '✓';
+
+    text-align: center;
+    color: var(--color-text-main);
+}
+
+.table-meet tbody .is-check {
+    background-color: var(--color-succ);
+}
+
+.table-meet tbody .is-check::after {
+    content: '✓';
+
+    display: block;
+
+    text-align: center;
+    color: var(--color-text-main);
+}
+
+.table-meet tbody .not-check {
+    background-color: var(--color-dunger);
+}
+
+.table-meet tbody .not-check::after {
+    content: '✕';
+
+    display: block;
+
+    text-align: center;
+    color: var(--color-text-main);
+}
+
+.table-meet tfoot td {
+    background-color: var( --color-system-sec);
+
+    color: var(--color-text-sec);
+    text-align: center;
+}
+
+.table-meet thead .max-count {
+    background-color: var(--color-succ) !important;
+}

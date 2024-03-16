@@ -1,0 +1,263 @@
+/* 
+    Автро: Семенов Даниил
+    13.03.2024
+    Файл стилей главной страницы
+    Стили названы в соотвествии с Tailwind
+*/
+
+/* Section hero */
+.hero {
+    background: url("./../img/hero-bg.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.hero .slogan-wrapp {
+    position: relative;
+    z-index: 10;
+
+    width: 60%;
+
+    font-size: 2rem;
+    color: var(--color-text-sec);
+}
+
+.slogan-wrapp .slogan {
+    font-size: 8rem;
+    text-transform: uppercase;
+}
+
+.slogan-wrapp .slogan > span {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.slogan-wrapp .slogan > span::after {
+    content: '';
+
+    position: absolute;
+    left: -4%;
+    top: 50%;
+    z-index: -1;
+
+    width: 108%;
+    height: 50%;
+
+    background-color: var(--color-main);
+    filter: blur(15px);
+}
+
+.slogan-widget-wrapp {
+    position: relative;
+
+    width: fit-content;
+
+    overflow: hidden;
+}
+
+.slogan-widget-wrapp::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    display: block;
+    width: 10px;
+    height: 100%;
+
+    background-color: var(--color-system-sec);
+}
+
+.slogan-widget {
+    position: relative;
+    left: 0;
+
+    padding: 2rem 3rem;
+
+    background-color: var(--color-system-sec-op);
+    backdrop-filter: blur(20px);
+
+    animation: widget-show 2s ease-in-out;
+}
+
+.slogan-widget::after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    display: block;
+    width: 10px;
+    height: 100%;
+
+    background-color: var(--color-system-sec);
+}
+
+@keyframes widget-show {
+    from {
+        left: calc(-100% - 20px);
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+/* Section about */
+.about::before {
+    width: 35vw;
+
+    background-color: var(--color-text-sec);
+}
+
+.about-group {
+    font-size: 2.5rem;
+}
+
+.about-group div {
+    flex: 1;
+}
+
+.about-item {
+    padding: 3rem;
+
+    min-width: 300px;
+
+    background: linear-gradient(var(--linear-gradient));
+
+    border: 2px solid var(--color-text-sec);
+    border-radius: 10px;
+
+    transition: 0.5s all;
+}
+
+.about-item > h3 {
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+.about-item:hover {
+    transform: scale(1.05);
+}
+
+/* Section system */
+.system::before {
+    width: 40vw;
+
+    background-color: var(--color-text-main);
+}
+
+.video-wrapp {
+    position: relative;
+}
+
+.system .video-wrapp video {
+    border-radius: 10px;
+}
+
+.system .video-wrapp video:first-child {
+    border-bottom: 1px solid var(--color-system-main);
+}
+
+.system .video-wrapp video:last-child {
+    position: absolute;
+    z-index: -1;
+    bottom: -5rem;
+
+    transform: scale(0.95);
+
+    filter: blur(20px);
+}
+
+/* Section answer */
+.answer::before {
+    width: 40vw;
+
+    background-color: var(--color-system-main);
+}
+
+.slider-wrapp {
+    overflow-x: scroll;
+}
+
+.slider {
+    position: relative;
+
+    min-width: 200%;
+}
+
+.slide {
+    width: 50%;
+} 
+
+.answer-item {
+    flex: 1;
+
+    padding: 3rem;
+
+    background: linear-gradient(var(--linear-gradient));
+
+    border: 2px solid var(--color-text-sec);
+    border-radius: 10px;
+}
+
+.answer-item-avatar {
+    position: relative;
+
+    width: 15rem;
+    height: 15rem;
+
+    min-width: 15rem;
+
+    border-radius: 10px;
+
+    background-color: var(--color-system-sec);
+}
+
+.answer-item-avatar img {
+    position: relative;
+    top: -10px;
+    left: 10px;
+
+    border-radius: inherit;
+
+    transition: 0.5s all;
+}
+
+.answer-item-avatar:hover img {
+    top: -5px;
+    left: 5px;
+}
+
+.answer-item-header-title > h3 {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.answer-item-header-title > p {
+    font-size: 2rem;
+    color: var(--color-text-the);
+}
+
+.answer-item > p {
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+/* Section create */
+.create::before {
+    width: 57vw;
+
+    background-color: var(--color-text-main);
+}
+
+/* Section authorizathion */
+.auth::before {
+    width: 35vw;
+
+    background-color: var(--color-text-sec);
+}
